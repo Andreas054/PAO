@@ -3,7 +3,7 @@ package org.example.lab2.task7;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InputConverter {
+public final class InputConverter {
     public static List<CalculatorRequest> mapRequests(String[] args) {
         List<CalculatorRequest> calculatorRequestList = new ArrayList<CalculatorRequest>();
         for (int i = 0; i < args.length / 3; i++) {

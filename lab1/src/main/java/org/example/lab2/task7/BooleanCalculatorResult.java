@@ -1,15 +1,15 @@
 package org.example.lab2.task7;
 
-public class BooleanCalculatorResult extends CalculatorResult {
+public final class BooleanCalculatorResult extends CalculatorResult {
     protected BooleanCalculatorResult(CalculatorRequest calculatorRequest) {
         super(calculatorRequest);
     }
 
     @Override
     public Object computeResult() {
-        Boolean a = (Boolean) super.getRequest().getLeftOperand();
-        Boolean b = (Boolean) super.getRequest().getRightOperand();
-        String operation = super.getRequest().getOperation();
+        Boolean a = (Boolean) super.getRequest().leftOperand();
+        Boolean b = (Boolean) super.getRequest().rightOperand();
+        String operation = super.getRequest().operation();
 
         if (operation.equals("&")) {
             return a & b;

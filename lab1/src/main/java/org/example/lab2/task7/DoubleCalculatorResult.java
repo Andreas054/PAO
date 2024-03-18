@@ -1,15 +1,15 @@
 package org.example.lab2.task7;
 
-public class DoubleCalculatorResult extends CalculatorResult {
+public final class DoubleCalculatorResult extends CalculatorResult {
     protected DoubleCalculatorResult(CalculatorRequest calculatorRequest) {
         super(calculatorRequest);
     }
 
     @Override
     public Object computeResult() {
-        Double a = (Double) super.getRequest().getLeftOperand();
-        Double b = (Double) super.getRequest().getRightOperand();
-        String operation = super.getRequest().getOperation();
+        Double a = (Double) super.getRequest().leftOperand();
+        Double b = (Double) super.getRequest().rightOperand();
+        String operation = super.getRequest().operation();
 
         return switch (operation) {
             case "+" -> a + b;

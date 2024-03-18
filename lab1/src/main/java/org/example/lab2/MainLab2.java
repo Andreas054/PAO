@@ -32,9 +32,9 @@ public class MainLab2 {
 //        "1", "+", "2", "2", "*", "5", "1", "+", "5.0", "1.0", "-", "2", "10.0", "/", "1", "true", "&", "true", "true", "&", "false", "true", "|", "false", "false", "|", "false",
         String inputStr = scanner.nextLine();
 
-        for (String a : inputStr.split(" ")) {
-            System.out.println(a.replace(",", "").replace("\"", ""));
-        }
+//        for (String a : inputStr.split(" ")) {
+//            System.out.println(a.replace(",", "").replace("\"", ""));
+//        }
 
         foo(inputStr.split(" "));
     }
