@@ -8,6 +8,12 @@ import org.example.lab4.calculator.exceptions.InvalidOperationException;
 import org.example.lab4.task1.JustMyFirstException;
 import org.example.lab4.task3.Student;
 import org.example.lab4.task4_5.Task4_5;
+import org.example.lab4.task6.StudentSerializationTester;
+import org.example.lab4.task6.serialization.StudentStorage;
+import org.example.lab4.task6.serialization.deserializer.RawDataStudentDeserializer;
+import org.example.lab4.task6.serialization.deserializer.TextStudentDeserializer;
+import org.example.lab4.task6.serialization.serializer.RawDataStudentSerializer;
+import org.example.lab4.task6.serialization.serializer.TextStudentSerializer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +57,19 @@ public class MainLab4 {
 
 
 //        TASK 6
-        
+        StudentStorage storage;
+        if (runBonus) {
+            storage = getStorageForBonus();
+        } else {
+            storage = getStorageForTask6();
+        }
+
+        StudentSerializationTester tester = new StudentSerializationTester(storage);
+        tester.runTests();
+
+        runCustomTests(storage);
+
+
 
 
 
@@ -88,6 +106,27 @@ public class MainLab4 {
             System.err.println(calculatorRuntimeException.getMessage());
         }
     }
+
+
+
+
+//    TASK 6
+    private final static boolean runBonus = false;
+
+    private static void runCustomTests(StudentStorage storage) {
+        // TODO: Aici va puteti scrie teste proprii pentru verificarea corectitudinii
+    }
+
+    private static StudentStorage getStorageForTask6() {
+        return new StudentStorage(new RawDataStudentSerializer(), new RawDataStudentDeserializer());
+    }
+
+    private static StudentStorage getStorageForBonus() {
+        return new StudentStorage(new TextStudentSerializer(), new TextStudentDeserializer());
+    }
+
+
+
 
     public static void foo(String[] args) {
         List<CalculatorResult> calculationResults = SmarterCalculator.calculate(args);
