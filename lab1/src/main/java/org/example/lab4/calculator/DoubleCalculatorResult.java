@@ -3,7 +3,7 @@ package org.example.lab4.calculator;
 import org.example.lab4.calculator.exceptions.InvalidOperationException;
 
 public final class DoubleCalculatorResult extends CalculatorResult {
-    protected DoubleCalculatorResult(CalculatorRequest calculatorRequest) {
+    public DoubleCalculatorResult(CalculatorRequest calculatorRequest) {
         super(calculatorRequest);
     }
 

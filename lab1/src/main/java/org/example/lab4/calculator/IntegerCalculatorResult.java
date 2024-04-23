@@ -3,7 +3,7 @@ package org.example.lab4.calculator;
 import org.example.lab4.calculator.exceptions.InvalidOperationException;
 
 public final class IntegerCalculatorResult extends CalculatorResult {
-    protected IntegerCalculatorResult(CalculatorRequest calculatorRequest) {
+    public IntegerCalculatorResult(CalculatorRequest calculatorRequest) {
         super(calculatorRequest);
     }
 

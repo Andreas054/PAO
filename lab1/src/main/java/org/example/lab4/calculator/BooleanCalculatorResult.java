@@ -3,7 +3,7 @@ package org.example.lab4.calculator;
 import org.example.lab4.calculator.exceptions.InvalidOperationException;
 
 public final class BooleanCalculatorResult extends CalculatorResult {
-    protected BooleanCalculatorResult(CalculatorRequest calculatorRequest) {
+    public BooleanCalculatorResult(CalculatorRequest calculatorRequest) {
         super(calculatorRequest);
     }
 
